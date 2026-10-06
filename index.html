@@ -4,11 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia de musica del sur</title>
+
+    <title>Academia de Música del Sur</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background-color: #eef2f7;
+        }
+
+        header {
+            padding: 30px 20px;
+            color: white;
             text-align: center;
+            background: linear-gradient(135deg, #32145f, #7048a8);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+            text-decoration: underline;
+        }
+
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        section {
+            margin-bottom: 25px;
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #d7dce5;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            margin-top: 0;
+            color: #32145f;
+            border-bottom: 2px solid #7048a8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #c9ced8;
+        }
+
+        th {
+            color: white;
+            background-color: #7048a8;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2eff8;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #32145f;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font: inherit;
+            border: 1px solid #b9c0cc;
+            border-radius: 8px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            background-color: #32145f;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #7048a8;
+        }
+
+        footer {
+            padding: 20px;
+            color: white;
+            text-align: center;
+            background-color: #222;
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -16,33 +151,104 @@
 <body>
 
     <header>
-        <br>
-       <strong>Se invita a toda la poblacion</strong>
-<br>
+        <h1>Academia de Música del Sur</h1>
+        <p><strong>Se invita a toda la población</strong></p>
+
         <nav>
-            <br>
-            Momenada
+            <ul>
+                <li><a href="#presentacion">Presentación</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#grupos">Grupos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        Toblas
+
+        <section id="presentacion">
+            <h2>Presentación</h2>
+            <p>
+                La Academia de Música del Sur invita a toda la población
+                a participar en sus actividades musicales.
+            </p>
+        </section>
+
+        <section id="horarios">
+            <h2>Horarios</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Turno</th>
+                        <th>Actividad</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Mañana</td>
+                        <td>Clases de música</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tarde</td>
+                        <td>Ensayos musicales</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="grupos">
+            <h2>Grupos musicales</h2>
+
+            <p>La academia está formada por los siguientes grupos:</p>
+
+            <ul>
+                <li>Grupo de música folklórica</li>
+                <li>Grupo de canto</li>
+                <li>Grupo instrumental</li>
+            </ul>
+        </section>
+
+        <section id="contacto">
+            <h2>Formulario de contacto</h2>
+
+            <form>
+                <div>
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div>
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+
+                <div>
+                    <label for="turno">Turno de interés:</label>
+                    <select id="turno" name="turno">
+                        <option value="manana">Turno mañana</option>
+                        <option value="tarde">Turno tarde</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+                </div>
+
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+
     </main>
 
     <footer>
-        Saya
+        <p>Gracias por su atención. ¡Los esperamos!</p>
+        <p>&copy; 2026 Academia de Música del Sur</p>
     </footer>
-  <footer>
-       <B> Esta formado por grupos</B>
-    </footer>
-    <br>
-    <TAble></TAble>
-    <p>turno tarde</p>
-    <li>tuno mañana</li>
-    </TAble>
-    <b>Gracias por su Atencion y lo esperamos</b>
-    <br>
-    <i> esta pagina es para gente seria</i>
+
 </body>
 
 </html>
